@@ -2,6 +2,37 @@
 <html>
   <head>
     <style>
+      .duckContainer{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 50%;
+        background-color: red;
+        animation: animate 2s linear infinite;
+        transform-origin: 50% 50%;
+        perspective: 800px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      background-color: rgba(255, 0, 0, 0)
+    }
+@keyframes animate {
+    0%{
+       transform: rotateY(0deg);
+    }
+    100%{
+        transform: rotateY(360deg);
+    }
+}
     </style>
   </head>
+  <body>
+    <div class='duckContainer'>
+      <img src="https://media1.tenor.com/images/3ea6e66db03f9db5f87b11fe20b63ce5/tenor.gif?itemid=18010817" alt="DuckGroovin">
+    </div>
+  </body>
 </html>

@@ -7,11 +7,15 @@
         height: 200px;
         background-color: red;
         display: block;
-        margin-left: auto;
-        margin-right: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        position: absolute;
         border-radius: 50%;
         background-color: red;
-        animation: animate 2s linear infinite;
+        animation: animate 3s linear infinite;
         transform-origin: 50% 50%;
         perspective: 800px;
     }
@@ -19,6 +23,9 @@
       max-width: 100%;
       height: auto;
       background-color: rgba(255, 0, 0, 0)
+    }
+    body {
+      background-color: rgba(3, 3, 4, 255);
     }
 @keyframes animate {
     0%{
@@ -31,8 +38,11 @@
     </style>
   </head>
   <body>
-    <div class='duckContainer'>
+    <div id='duckHolder' class='duckContainer'>
       <img src="https://media1.tenor.com/images/3ea6e66db03f9db5f87b11fe20b63ce5/tenor.gif?itemid=18010817" alt="DuckGroovin">
     </div>
+    <script>
+
+    </script>
   </body>
 </html>

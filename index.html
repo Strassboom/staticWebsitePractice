@@ -2,10 +2,20 @@
 <html>
   <head>
     <style>
+      .spinContainer{
+        width: 800px;
+        height: 800px;
+        display: block;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        position: absolute;
+      }
       .duckContainer{
-        width: 200px;
-        height: 200px;
-        background-color: red;
+        width: 25%;
+        height: 25%;
         display: block;
         top: 0;
         bottom: 0;
@@ -14,8 +24,8 @@
         margin: auto;
         position: absolute;
         border-radius: 50%;
-        background-color: red;
         animation: animate 3s linear infinite;
+        animation-duration: 3s;
         transform-origin: 50% 50%;
         perspective: 800px;
       }
@@ -35,14 +45,47 @@
             transform: rotateY(360deg);
         }
       }
+      .slider {
+        width: 60%;
+        margin: 50px auto;
+        -webkit-appearance: none;
+        height: 8px;
+        border-radius: 4px;
+        margin-bottom: 15px;
+        background-color: rgb(200, 200, 200);
+      }
+
+      .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 18px;
+        height: 18px;
+        border-radius: 10px;
+        background-color: hsl(50, 100%, 50%);
+        overflow: visible;
+        cursor: pointer;
+      }
+
+      .slidecontainer {
+        transform: translateY(-10px);
+        bottom: 8px;
+      }
     </style>
   </head>
   <body>
+    <div class='spinContainer'>
     <div id='duckHolder' class='duckContainer'>
       <img src="https://media1.tenor.com/images/3ea6e66db03f9db5f87b11fe20b63ce5/tenor.gif?itemid=18010817" alt="DuckGroovin">
     </div>
+    <div class="slidecontainer" align="center">
+      <input id="itr" type="range" step='0.125' min="1" max="8" value="2" class="slider" name="rangeInput" oninput='animSpeed(this.value)'>
+    </div>
+  </div>
     <script>
-
+      div = document.getElementById('duckHolder');
+      function animSpeed(value){
+        console.log(value);
+        div.style.animationDuration = `${String(2/value)}s`;
+      }
     </script>
   </body>
 </html>

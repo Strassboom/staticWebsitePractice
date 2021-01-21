@@ -24,7 +24,7 @@
         margin: auto;
         position: absolute;
         border-radius: 50%;
-        animation: animate 3s linear infinite;
+        animation: pace 3s linear infinite;
         animation-duration: 3s;
         transform-origin: 50% 50%;
         perspective: 800px;
@@ -32,17 +32,40 @@
       img {
         max-width: 100%;
         height: auto;
-        background-color: rgba(255, 0, 0, 0)
+        background-color: rgba(255, 0, 0, 0);
+        animation: turn 3s linear infinite;
       }
       body {
         background-color: rgba(3, 3, 4, 255);
       }
-      @keyframes animate {
+
+      @keyframes turn{
         0%{
           transform: rotateY(0deg);
         }
+        48%{
+          transform: rotateY(100deg);
+        }
+        50%{
+          transform: rotateY(180deg);
+        }
+        98%{
+          transform: rotateY(280deg);
+        }
         100%{
             transform: rotateY(360deg);
+        }
+      }
+      
+      @keyframes pace {
+        0%{
+          transform: translateX(0px);
+        }
+        50%{
+          transform: translateX(100px);
+        }
+        100%{
+        transform: translateX(0px);
         }
       }
       .slider {
@@ -74,7 +97,7 @@
   <body>
     <div class='spinContainer'>
     <div id='duckHolder' class='duckContainer'>
-      <img src="https://media1.tenor.com/images/3ea6e66db03f9db5f87b11fe20b63ce5/tenor.gif?itemid=18010817" alt="DuckGroovin">
+      <img id='groovin' src="https://media1.tenor.com/images/3ea6e66db03f9db5f87b11fe20b63ce5/tenor.gif?itemid=18010817" alt="DuckGroovin">
     </div>
     <div class="slidecontainer" align="center">
       <input id="itr" type="range" step='0.125' min="1" max="8" value="2" class="slider" name="rangeInput" oninput='animSpeed(this.value)'>
@@ -82,9 +105,11 @@
   </div>
     <script>
       div = document.getElementById('duckHolder');
+      img = document.getElementById('groovin');
       function animSpeed(value){
         console.log(value);
         div.style.animationDuration = `${String(2/value)}s`;
+        img.style.animationDuration = div.style.animationDuration;
       }
     </script>
   </body>

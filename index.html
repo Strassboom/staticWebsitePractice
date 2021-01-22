@@ -59,13 +59,13 @@
       
       @keyframes pace {
         0%{
-          transform: translateX(0px);
+          transform: translateX(-200px);
         }
         50%{
-          transform: translateX(100px);
+          transform: translateX(200px);
         }
         100%{
-        transform: translateX(0px);
+        transform: translateX(-200px);
         }
       }
       .slider {
@@ -108,7 +108,7 @@
       img = document.getElementById('groovin');
       function animSpeed(value){
         console.log(value);
-        div.style.animationDuration = `${String(2/value)}s`;
+        div.style.animationDuration = `${String(3/value)}s`;
         img.style.animationDuration = div.style.animationDuration;
       }
     </script>
